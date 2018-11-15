@@ -34,7 +34,7 @@ def main():
     from molecules.utils import one_hot_array, one_hot_index, from_one_hot_array, \
         decode_smiles_from_indexes, load_dataset
     from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau
-    
+
     data_train, data_test, charset = load_dataset(args.data)
     model = MoleculeVAE()
     if os.path.isfile(args.model):
@@ -55,7 +55,7 @@ def main():
         data_train,
         data_train,
         shuffle = True,
-        nb_epoch = args.epochs,
+        epochs = args.epochs,
         batch_size = args.batch_size,
         callbacks = [checkpointer, reduce_lr],
         validation_data = (data_test, data_test)

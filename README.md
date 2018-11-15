@@ -1,3 +1,6 @@
+Note: The original code is from this repo: https://github.com/maxhodak/keras-molecules.git
+Here it is modified to be compatible with Python 3.6.  If you use this repo please credit the original author.
+
 # A Keras implementation of Aspuru-Guzik's molecular autoencoder paper
 
 <table style="border-collapse: collapse">

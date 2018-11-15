@@ -38,10 +38,10 @@ def get_arguments():
 def main():
     args = get_arguments()
     np.random.seed(args.random_seed)
-    
+
     from molecules.model import MoleculeVAE
     from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau
-    
+
     data = pd.read_hdf(args.data, 'table')
     structures = data['structure']
 
@@ -79,7 +79,7 @@ def main():
     model.autoencoder.fit_generator(
         train_gen,
         args.epoch_size,
-        nb_epoch = args.epochs,
+        epochs = args.epochs,
         callbacks = [checkpointer, reduce_lr],
         validation_data = test_gen,
         nb_val_samples = args.epoch_size / test_divisor,
